@@ -4,15 +4,20 @@ import os
 my_login = os.environ['LOGIN']
 my_password = os.environ['PASSWORD']
 
-mail = 'https://dvmn.org/referrals/dKtkrWYmHIpDm3tqImpmcu1F84Shh2keFSaO10p4/'
-friend_name = 'Малика'
-my_name = 'Мэри'
+mail = 'https://dvmn.org/referrals/dKtkrWYmHIpDm3tqImpmcu1F84Shh2keFSaO10p4/''
+recipient_name = 'Малика'
+sender_name = 'Мэри'
+sender_email = 'il.os1pov@yandex.ru'
+recipient_email = 'merypopins312@yandex.ru'
+
 letter = """From: il.os1pov@yandex.ru
 To: merypopins312@yandex.ru
 Subject: Приглашение !
 Content-Type: text/plain; charset="UTF-8";"""
 
 text = """{a}
+
+
 Привет, {f}! {m} приглашает тебя на сайт {w}!
 
 {w} — это новая версия онлайн-курса по программированию. 
@@ -33,9 +38,9 @@ text = text.encode("UTF-8")
 
 server = smtplib.SMTP_SSL('smtp.yandex.ru:465')
 server.login(my_login ,my_password)
-server.sendmail('il.os1pov@yandex.ru','merypopins312@yandex.ru', text)
+server.sendmail(sender_email , recipient_email , text)
 server.quit()
 
-print(text)
+
 
 
